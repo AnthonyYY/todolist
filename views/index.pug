@@ -1,0 +1,16 @@
+html
+	head
+		title todos
+	body
+		h1= username
+		div
+			input#todo-content(type="text" placeholder="添加新的备忘")
+			button#todo-adder 📝添加
+		ul
+			each todo in todos
+				li
+					span #{todo.content}
+					input(checked=todo.finished type='checkbox' data-id=todo._id)
+					a(href="javascript:void(0)", data-id=todo._id) 删除
+
+	script(src="/js/todo.js")
